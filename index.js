@@ -17,6 +17,13 @@ const books = [
 
 // The GraphQL schema in string form
 const typeDefs = `
+  interface Foo { foo: String }
+  interface Bar { bar: String }
+  type FooBar implements Foo, Bar {
+    fooBar: String,
+    foo: String,
+    bar: String
+  }
   type Query { books: [Book] }
   type Book { title: String, author: String }
 `;
